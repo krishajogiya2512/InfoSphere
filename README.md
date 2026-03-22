@@ -105,7 +105,7 @@ Tools:
 ---
 
 ## 📂 Project Structure
-
+```
 InfoSphere
 │
 ├── index.html
@@ -113,5 +113,6 @@ InfoSphere
 ├── script.js
 ├── README.md
 └── assets/
+```
 
 ---
