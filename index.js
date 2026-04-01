@@ -13,6 +13,10 @@ async function getNews() {
       `https://gnews.io/api/v4/search?q=${query}&lang=en&max=10&token=${apiKey}`
     );
 
+    if (!response.ok) {
+    throw new Error("API Error");
+    }
+
     const data = await response.json();
     console.log(data);
 
@@ -35,7 +39,7 @@ function displayNews(articles) {
   }
 
   articles.map(article => {
-    const image = article.urlToImage || "https://via.placeholder.com/300";
+    const image = article.image || "https://via.placeholder.com/300";
 
     const card = document.createElement("div");
     card.classList.add("card");
