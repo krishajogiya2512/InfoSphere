@@ -25,7 +25,7 @@ async function getNews() {
     displayNews(data.articles);
 
   } catch (error) {
-    loading.innerText = "Error loading data";
+    loading.innerText = "API limit reached. Try again later 😅";
     console.log(error);
   }
 }
@@ -54,5 +54,4 @@ function displayNews(articles) {
     container.appendChild(card);
   });
 }
-
 getNews();
