@@ -7,16 +7,7 @@
 </head>
 <body>
 
-  <h1>InfoSphere Dashboard</h1>
-  <input type="text" id="searchInput" placeholder="Search news...">
-  <button onclick="getNews()">Search</button>
-
-  <p id="loading"></p>
-
-  <div id="newsContainer"></div>
-
-  <body>
-
+  <!-- Navbar -->
   <nav class="navbar">
     <h2>InfoSphere</h2>
     <div class="nav-links">
@@ -26,24 +17,26 @@
     </div>
   </nav>
 
+  <!-- Main Container -->
   <div class="container">
 
     <h1>Dashboard</h1>
-
     <p class="subtitle">Stay updated with real-time news and insights</p>
 
+    <!-- Search -->
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Search news...">
       <button onclick="getNews()">🔍 Search</button>
     </div>
 
+    <!-- Loading -->
     <p id="loading"></p>
 
+    <!-- News -->
     <div id="newsContainer"></div>
 
   </div>
 
-  <script src="script.js"></script>
-
-
+  <script src="index.js"></script>
+</body>
 </html>
