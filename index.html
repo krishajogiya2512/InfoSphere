@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>InfoSphere Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="index.js"></script>
-</body>
+
+  <h1>InfoSphere Dashboard</h1>
+  <input type="text" id="searchInput" placeholder="Search news...">
+  <button onclick="getNews()">Search</button>
+
+  <p id="loading"></p>
+
+  <div id="newsContainer"></div>
+
+  <body>
+
+  <nav class="navbar">
+    <h2>InfoSphere</h2>
+    <div class="nav-links">
+      <button>News</button>
+      <button>Weather</button>
+      <button>Countries</button>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <h1>Dashboard</h1>
+
+    <p class="subtitle">Stay updated with real-time news and insights</p>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search news...">
+      <button onclick="getNews()">🔍 Search</button>
+    </div>
+
+    <p id="loading"></p>
+
+    <div id="newsContainer"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+
 </html>
