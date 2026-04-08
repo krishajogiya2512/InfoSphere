@@ -20,10 +20,29 @@
     <h1>Countries Dashboard</h1>
     <p class="subtitle">Explore country details</p>
 
+    <p style="text-align:center; color:#60a5fa; margin-top:10px;">
+    Discover countries across the world
+    </p>
+
     <div class="search-box">
       <input type="text" id="countryInput" placeholder="Enter country name">
       <button onclick="getCountry()">Search</button>
     </div>
+
+    <div class="controls">
+      <select id="regionFilter" onchange="filterByRegion()">
+        <option value="">All Regions</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">Americas</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+
+      <button onclick="sortByPopulation()">Sort by Population</button>
+    </div>
+
+
 
     <p id="loading"></p>
 

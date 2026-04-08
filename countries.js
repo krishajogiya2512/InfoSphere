@@ -1,3 +1,5 @@
+let allCountries = []; 
+
 async function getCountry() {
   const country = document.getElementById("countryInput").value;
   const loading = document.getElementById("loading");
@@ -20,7 +22,9 @@ async function getCountry() {
 
     loading.innerText = "";
 
-    displayCountry(data[0]);
+    allCountries = data; 
+
+    displayCountries(allCountries);
 
   } catch (error) {
     loading.innerText = "Country not found";
@@ -28,17 +32,50 @@ async function getCountry() {
   }
 }
 
-function displayCountry(country) {
+function displayCountries(countries) {
   const container = document.getElementById("countryContainer");
 
-  container.innerHTML = `
-    <div class="card">
+  container.innerHTML = "";
+
+  if (!countries || countries.length === 0) {
+    container.innerHTML = "<p>No countries found</p>";
+    return;
+  }
+
+  countries.forEach(country => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
       <img src="${country.flags.png}">
       <h2>${country.name.common}</h2>
       <p><strong>Capital:</strong> ${country.capital?.[0]}</p>
       <p><strong>Region:</strong> ${country.region}</p>
       <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
       <p><strong>Currency:</strong> ${Object.values(country.currencies)[0].name}</p>
-    </div>
-  `;
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function filterByRegion() {
+  const region = document.getElementById("regionFilter").value;
+
+  if (!region) {
+    displayCountries(allCountries);
+    return;
+  }
+
+  const filtered = allCountries.filter(c => c.region === region);
+
+  displayCountries(filtered);
+}
+
+function sortByPopulation() {
+  const sorted = [...allCountries].sort(
+    (a, b) => b.population - a.population
+  );
+
+  displayCountries(sorted);
 }
