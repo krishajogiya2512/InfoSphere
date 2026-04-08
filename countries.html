@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <h2>InfoSphere</h2>
+  <div class="nav-links">
+    <a href="index.html"><button>News</button></a>
+    <a href="weather.html"><button>Weather</button></a>
+    <a href="countries.html"><button>Countries</button></a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Countries</h1>
+
+  <input type="text" id="countryInput" placeholder="Search country">
+  <button onclick="getCountry()">Search</button>
+
+  <div id="countryResult"></div>
+</div>
+
+<script src="countries.js"></script>
+</body>
+</html>

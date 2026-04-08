@@ -1,4 +1,4 @@
-const apiKey = "81f1b66837c3402d84535437af98d96c";
+const apiKey = "YOUR_NEWS_API_KEY"; // 🔥 replace if needed
 
 async function getNews() {
   const query = document.getElementById("searchInput").value || "technology";
@@ -10,24 +10,23 @@ async function getNews() {
 
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`
+      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`
     );
-
-    console.log("Response status:", response.status);
+    // const response = await fetch(
+    //   `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`
+    // );
 
     if (!response.ok) {
-    throw new Error("API Error");
+      throw new Error("API Error");
     }
 
     const data = await response.json();
-    console.log(data);
 
     loading.innerText = "";
-
     displayNews(data.articles);
 
   } catch (error) {
-    loading.innerText = "API limit reached. Try again later";
+    loading.innerText = "API not working / limit reached";
     console.log(error);
   }
 }
@@ -40,14 +39,14 @@ function displayNews(articles) {
     return;
   }
 
-  articles.map(article => {
+  articles.forEach(article => {
     const image = article.urlToImage || "https://via.placeholder.com/300";
 
     const card = document.createElement("div");
     card.classList.add("card");
 
     card.innerHTML = `
-      <img src="${image}" alt="">
+      <img src="${image}">
       <h3>${article.title}</h3>
       <p>${article.description || "No description available"}</p>
       <a href="${article.url}" target="_blank">Read More →</a>

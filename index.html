@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>InfoSphere Dashboard</title>
+  <title>InfoSphere - News</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,16 +10,14 @@
   <nav class="navbar">
     <h2>InfoSphere</h2>
     <div class="nav-links">
-      <button>News</button>
-      <button>Weather</button>
-      <button>Countries</button>
+      <a href="index.html"><button>News</button></a>
+      <a href="weather.html"><button>Weather</button></a>
+      <a href="countries.html"><button>Countries</button></a>
     </div>
   </nav>
 
   <div class="container">
-
-    <h1>Dashboard</h1>
-    <p class="subtitle">Stay updated with real-time news and insights</p>
+    <h1>News Dashboard</h1>
 
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Search news...">
@@ -27,13 +25,7 @@
     </div>
 
     <p id="loading"></p>
-
-    <p style="text-align:center; color:#94a3b8;">
-      Search for news to get started
-    </p>
-
     <div id="newsContainer"></div>
-
   </div>
 
   <script src="index.js"></script>
