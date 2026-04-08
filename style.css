@@ -14,7 +14,6 @@ h1 {
   text-align: center;
 }
 
-/* 🌟 NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -35,14 +34,12 @@ h1 {
   cursor: pointer;
 }
 
-/* 🌟 CONTAINER */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* 🌟 SEARCH */
 .search-box {
   display: flex;
   justify-content: center;
@@ -66,7 +63,6 @@ h1 {
   cursor: pointer;
 }
 
-/* 🌟 CONTROLS */
 .controls {
   display: flex;
   justify-content: center;
@@ -82,7 +78,6 @@ select {
   color: #0f172a;
 }
 
-/* 🌟 NEWS GRID */
 #newsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -97,7 +92,6 @@ select {
   margin-top: 40px;
 }
 
-/* 🌟 CARD */
 .card {
   background: linear-gradient(145deg, #1e293b, #0f172a);
   padding: 20px;
@@ -135,14 +129,12 @@ select {
   text-decoration: none;
 }
 
-/* 🌟 SUBTITLE */
 .subtitle {
   text-align: center;
   color: #94a3b8;
   margin-bottom: 25px;
 }
 
-/* 🌟 BUTTON BASE */
 button {
   transition: 0.3s;
   font-weight: 500;
@@ -153,7 +145,6 @@ button:hover {
   background: #e2e8f0;
 }
 
-/* 🌟 LOADING */
 #loading {
   text-align: center;
   margin-top: 20px;
@@ -161,7 +152,6 @@ button:hover {
   font-size: 18px;
 }
 
-/* 🌟 ANIMATION */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -173,11 +163,6 @@ button:hover {
   }
 }
 
-/* ========================= */
-/* 🔥 BUTTON UPGRADE (WHITE) */
-/* ========================= */
-
-/* Search button */
 .search-box button {
   background: white;
   color: #0f172a;
@@ -189,7 +174,6 @@ button:hover {
   box-shadow: 0 6px 20px rgba(255,255,255,0.3);
 }
 
-/* Sort button */
 .controls button {
   background: white;
   color: #0f172a;
@@ -201,7 +185,6 @@ button:hover {
   box-shadow: 0 6px 20px rgba(255,255,255,0.3);
 }
 
-/* Dropdown */
 select {
   background: white;
   color: #0f172a;
@@ -212,7 +195,6 @@ select:hover {
   box-shadow: 0 6px 20px rgba(255,255,255,0.3);
 }
 
-/* Navbar hover */
 .nav-links button:hover {
   background: #475569;
 }
