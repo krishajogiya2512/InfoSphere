@@ -198,3 +198,36 @@ select:hover {
 .nav-links button:hover {
   background: #475569;
 }
+
+.light-mode {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.light-mode .navbar {
+  background: #e2e8f0;
+}
+
+.light-mode .card {
+  background: white;
+  color: black;
+}
+
+.light-mode input {
+  background: white;
+  color: black;
+}
+
+.light-mode select {
+  background: white;
+  color: black;
+}
+
+.light-mode .search-box button {
+  background: #2563eb;
+}
+
+.light-mode .fav-btn {
+  background: #e2e8f0;
+  color: black;
+}

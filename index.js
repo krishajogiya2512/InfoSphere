@@ -48,3 +48,15 @@ function displayNews(articles) {
     container.appendChild(card);
   });
 }
+
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
+
+  const btn = document.querySelector(".theme-btn");
+
+  if (document.body.classList.contains("light-mode")) {
+    btn.innerText = "Light";
+  } else {
+    btn.innerText = "Dark";
+  }
+}

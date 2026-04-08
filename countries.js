@@ -49,6 +49,11 @@ function displayCountries(countries) {
     card.innerHTML = `
       <img src="${country.flags.png}">
       <h2>${country.name.common}</h2>
+
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+        Favorite
+      </button>
+
       <p><strong>Capital:</strong> ${country.capital?.[0]}</p>
       <p><strong>Region:</strong> ${country.region}</p>
       <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
@@ -57,6 +62,16 @@ function displayCountries(countries) {
 
     container.appendChild(card);
   });
+}
+
+function toggleFavorite(button) {
+  if (button.innerText.includes("")) {
+    button.innerText = "Favorited";
+    button.style.background = white;
+  } else {
+    button.innerText = "Favorite";
+    button.style.background = "#334155";
+  }
 }
 
 function filterByRegion() {
