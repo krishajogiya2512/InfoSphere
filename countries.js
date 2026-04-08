@@ -1,23 +1,44 @@
 async function getCountry() {
-  const name = document.getElementById("countryInput").value;
-  const result = document.getElementById("countryResult");
+  const country = document.getElementById("countryInput").value;
+  const loading = document.getElementById("loading");
+  const container = document.getElementById("countryContainer");
+
+  if (!country) {
+    alert("Please enter a country name");
+    return;
+  }
+
+  loading.innerText = "Loading...";
+  container.innerHTML = "";
 
   try {
-    const response = await fetch(
-      `https://restcountries.com/v3.1/name/${name}`
+    const res = await fetch(
+      `https://restcountries.com/v3.1/name/${country}`
     );
 
-    const data = await response.json();
-    const country = data[0];
+    const data = await res.json();
 
-    result.innerHTML = `
-      <h2>${country.name.common}</h2>
-      <p>Capital: ${country.capital}</p>
-      <p>Population: ${country.population}</p>
-      <img src="${country.flags.png}" width="150">
-    `;
+    loading.innerText = "";
+
+    displayCountry(data[0]);
 
   } catch (error) {
-    result.innerHTML = "Country not found";
+    loading.innerText = "Country not found";
+    console.log(error);
   }
+}
+
+function displayCountry(country) {
+  const container = document.getElementById("countryContainer");
+
+  container.innerHTML = `
+    <div class="card">
+      <img src="${country.flags.png}">
+      <h2>${country.name.common}</h2>
+      <p><strong>Capital:</strong> ${country.capital?.[0]}</p>
+      <p><strong>Region:</strong> ${country.region}</p>
+      <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
+      <p><strong>Currency:</strong> ${Object.values(country.currencies)[0].name}</p>
+    </div>
+  `;
 }

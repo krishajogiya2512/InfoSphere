@@ -145,6 +145,12 @@ button:hover {
   animation: fadeIn 0.5s ease-in;
 }
 
+#countryContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

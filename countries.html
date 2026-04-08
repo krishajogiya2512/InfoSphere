@@ -2,29 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Countries</title>
+  <title>Countries - InfoSphere</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <h2>InfoSphere</h2>
-  <div class="nav-links">
-    <a href="index.html"><button>News</button></a>
-    <a href="weather.html"><button>Weather</button></a>
-    <a href="countries.html"><button>Countries</button></a>
+  <nav class="navbar">
+    <h2>InfoSphere</h2>
+    <div class="nav-links">
+      <button onclick="location.href='index.html'">News</button>
+      <button onclick="location.href='weather.html'">Weather</button>
+      <button onclick="location.href='countries.html'">Countries</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Countries Dashboard</h1>
+    <p class="subtitle">Explore country details</p>
+
+    <div class="search-box">
+      <input type="text" id="countryInput" placeholder="Enter country name">
+      <button onclick="getCountry()">Search</button>
+    </div>
+
+    <p id="loading"></p>
+
+    <div id="countryContainer"></div>
   </div>
-</nav>
 
-<div class="container">
-  <h1>Countries</h1>
-
-  <input type="text" id="countryInput" placeholder="Search country">
-  <button onclick="getCountry()">Search</button>
-
-  <div id="countryResult"></div>
-</div>
-
-<script src="countries.js"></script>
+  <script src="countries.js"></script>
 </body>
 </html>

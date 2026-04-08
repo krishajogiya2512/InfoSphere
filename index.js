@@ -1,4 +1,4 @@
-const apiKey = "YOUR_NEWS_API_KEY"; // 🔥 replace if needed
+const apiKey = "21c8d31b465e09b8bbc33f8801a891d5";
 
 async function getNews() {
   const query = document.getElementById("searchInput").value || "technology";
@@ -10,15 +10,8 @@ async function getNews() {
 
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`
+      `https://gnews.io/api/v4/search?q=${query}&lang=en&max=10&token=${apiKey}`
     );
-    // const response = await fetch(
-    //   `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`
-    // );
-
-    if (!response.ok) {
-      throw new Error("API Error");
-    }
 
     const data = await response.json();
 
@@ -26,7 +19,7 @@ async function getNews() {
     displayNews(data.articles);
 
   } catch (error) {
-    loading.innerText = "API not working / limit reached";
+    loading.innerText = "Error loading news";
     console.log(error);
   }
 }
@@ -40,7 +33,7 @@ function displayNews(articles) {
   }
 
   articles.forEach(article => {
-    const image = article.urlToImage || "https://via.placeholder.com/300";
+    const image = article.image || "https://via.placeholder.com/300";
 
     const card = document.createElement("div");
     card.classList.add("card");

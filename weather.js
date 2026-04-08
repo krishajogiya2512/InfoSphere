@@ -1,28 +1,50 @@
-const weatherApiKey = "YOUR_WEATHER_API_KEY";
+const apiKey = "a6871b4d7ac720d6d337dc1adcff33a8";
 
 async function getWeather() {
   const city = document.getElementById("cityInput").value || "Mumbai";
-  const result = document.getElementById("weatherResult");
+  const container = document.getElementById("weatherContainer");
+  const loading = document.getElementById("loading");
+
+  loading.innerText = "Loading...";
+  container.innerHTML = "";
 
   try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}&units=metric`
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
     );
 
-    const data = await response.json();
-
-    if (data.cod !== 200) {
-      result.innerHTML = "City not found";
-      return;
+    if (!res.ok) {
+      throw new Error("City not found");
     }
 
-    result.innerHTML = `
-      <h2>${data.name}</h2>
-      <p>Temperature: ${data.main.temp}°C</p>
-      <p>Weather: ${data.weather[0].main}</p>
-    `;
+    const data = await res.json();
 
-  } catch (error) {
-    result.innerHTML = "Error fetching weather";
+    loading.innerText = "";
+
+    displayWeather(data);
+
+  } catch (err) {
+    loading.innerText = "Weather not found / API issue";
+    console.log(err);
   }
+}
+
+function displayWeather(data) {
+  const container = document.getElementById("weatherContainer");
+
+  const icon = data.weather[0].icon;
+
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML = `
+    <img src="https://openweathermap.org/img/wn/${icon}@2x.png" style="width:80px;">
+    <h2>${data.name}, ${data.sys.country}</h2>
+    <h3>${data.main.temp}°C</h3>
+    <p>${data.weather[0].description}</p>
+    <p>💧 Humidity: ${data.main.humidity}%</p>
+    <p>🌬 Wind: ${data.wind.speed} m/s</p>
+  `;
+
+  container.appendChild(card);
 }
