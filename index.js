@@ -51,12 +51,23 @@ function displayNews(articles) {
 
 function toggleTheme() {
   document.body.classList.toggle("light-mode");
-
-  const btn = document.querySelector(".theme-btn");
-
   if (document.body.classList.contains("light-mode")) {
-    btn.innerText = "Light";
+      localStorage.setItem("theme", "light");
   } else {
-    btn.innerText = "Dark";
+      localStorage.setItem("theme", "dark");
   }
 }
+
+let newsTimeout;
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+    }
+    document.getElementById("searchInput")?.addEventListener("input", () => {
+        clearTimeout(newsTimeout);
+        newsTimeout = setTimeout(getNews, 300);
+    });
+    
+    // Default load
+    getNews();
+});

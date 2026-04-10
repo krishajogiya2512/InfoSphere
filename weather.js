@@ -48,3 +48,26 @@ function displayWeather(data) {
 
   container.appendChild(card);
 }
+
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
+  if (document.body.classList.contains("light-mode")) {
+      localStorage.setItem("theme", "light");
+  } else {
+      localStorage.setItem("theme", "dark");
+  }
+}
+
+let weatherTimeout;
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+    }
+    document.getElementById("cityInput")?.addEventListener("input", () => {
+        clearTimeout(weatherTimeout);
+        weatherTimeout = setTimeout(getWeather, 300);
+    });
+    
+    // Default load
+    getWeather();
+});
