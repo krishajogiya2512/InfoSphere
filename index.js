@@ -9,9 +9,17 @@ async function getNews() {
   container.innerHTML = "";
 
   try {
-    const response = await fetch(
-      `https://gnews.io/api/v4/search?q=${query}&lang=en&max=10&token=${apiKey}`
-    );
+    const isLocal = window.location.hostname === "localhost" || 
+                    window.location.hostname === "127.0.0.1" || 
+                    window.location.protocol === "file:";
+
+    // Use direct API on local/file (GNews allows this on free tier), 
+    // otherwise use Vercel Serverless proxy to bypass CORS on production.
+    const url = isLocal 
+      ? `https://gnews.io/api/v4/search?q=${encodeURIComponent(query)}&lang=en&max=10&token=${apiKey}`
+      : `/api/news?q=${encodeURIComponent(query)}`;
+
+    const response = await fetch(url);
 
     const data = await response.json();
 
