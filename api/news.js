@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   }
 
   const { q = 'technology' } = req.query;
-  const apiKey = "21c8d31b465e09b8bbc33f8801a891d5";
+  const apiKey = "9a9509e9e70b8766f3f8bcda8621237a";
   // Max 10 to limit results
   const url = `https://gnews.io/api/v4/search?q=${encodeURIComponent(q)}&lang=en&max=10&token=${apiKey}`;
 
