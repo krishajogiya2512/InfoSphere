@@ -1,119 +1,232 @@
-# InfoSphere – Multi-API Knowledge Dashboard
+# 🌐 InfoSphere – Multi-API Knowledge Dashboard
 
-## 📌 Project Description
-
-InfoSphere is a Multi-API Knowledge Dashboard web application that displays real-time information from different public APIs in a single interface.
-
-The dashboard will integrate multiple APIs including News API, OpenWeather API, and REST Countries API to show real-time data such as news articles, weather details, and country information.
-
-The project demonstrates API integration using JavaScript fetch, search, filtering, sorting using array higher-order functions, and responsive UI design.
+A modern React-based dashboard that aggregates real-time information from multiple public APIs into a single platform. Users can explore trending news, check weather conditions, and discover country information through an intuitive and responsive interface.
 
 ---
 
-## 🎯 Project Objective
+## Live Demo
 
-The objective of this project is to:
+Add your deployed link here:
 
-- Build a web application using public APIs
-- Learn API integration using fetch
-- Implement search, filtering, and sorting using array HOF
-- Create a responsive and clean UI
-- Follow proper GitHub workflow
-- Deploy the project after completion
+```text
+https://your-project-url.vercel.app
+```
 
 ---
 
-## 🌐 APIs Used
+## Overview
 
-### 1. News API
+InfoSphere is a multi-functional knowledge dashboard built using React and Vite. The application integrates multiple APIs to provide real-time data while demonstrating modern frontend development concepts such as component-based architecture, state management, API integration, search functionality, filtering, sorting, and responsive design.
+
+---
+
+## Objectives
+
+* Integrate multiple public APIs into a single application
+* Learn asynchronous data fetching using Fetch API
+* Practice React component architecture
+* Implement search, filtering, and sorting features
+* Build a responsive and user-friendly interface
+* Apply Context API for theme management
+* Deploy a production-ready frontend application
+
+---
+
+## Features
+
+### News Dashboard
+
+* Fetch latest news articles
+* Search news by keywords
+* View article details
+* Dynamic content rendering
+* Real-time API integration
+
+### Weather Dashboard
+
+* Search weather by city
+* Display temperature and weather conditions
+* Real-time weather updates
+* Clean weather information cards
+
+### Countries Dashboard
+
+* Search countries by name
+* Filter countries by region
+* Sort countries by population
+* Display:
+
+  * Country Flag
+  * Capital
+  * Region
+  * Population
+  * Currency Information
+
+### UI Features
+
+* Responsive design
+* Dark Mode / Light Mode
+* Modern dashboard layout
+* Reusable React components
+* Smooth user experience
+* Loading and error handling
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* React.js
+* Vite
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+
+### React Concepts
+
+* Functional Components
+* React Hooks
+* useState
+* useEffect
+* Context API
+* Component Reusability
+* Conditional Rendering
+
+### APIs
+
+* News API
+* OpenWeather API
+* REST Countries API
+
+### Tools
+
+* Git
+* GitHub
+* VS Code
+* Browser DevTools
+
+---
+
+## APIs Used
+
+### News API
+
+Provides latest news articles and headlines.
+
+```text
 https://newsapi.org
+```
 
-Used to fetch latest news articles.
+### OpenWeather API
 
-Features:
-- Search news
-- Filter by category
-- Sort articles
+Provides real-time weather information.
 
----
-
-### 2. OpenWeather API
+```text
 https://openweathermap.org/api
+```
 
-Used to display weather information.
+### REST Countries API
 
-Features:
-- Search weather by city
-- Show temperature and conditions
+Provides country-related information.
 
----
-
-### 3. REST Countries API
+```text
 https://restcountries.com
-
-Used to display country details.
-
-Features:
-- Search country
-- Filter by region
-- Sort by population
-
-All APIs will be integrated using JavaScript fetch().
-
----
-
-## ⚙️ Features Planned
-
-Core features:
-
-- API integration using fetch
-- Dynamic UI rendering
-- Search functionality
-- Filtering using array methods
-- Sorting using array methods
-- Responsive design
-
-Additional features:
-
-- Tabs for different sections
-- Loading indicator
-- Dark mode / Light mode
-- Favorites using LocalStorage (optional)
-- Pagination / Debounce (optional)
-
----
-
-## 🛠 Technologies Used
-
-- HTML
-- CSS
-- JavaScript
-- Fetch API
-- Array Higher Order Functions
-  - map()
-  - filter()
-  - sort()
-  - find()
-
-Tools:
-
-- VS Code
-- GitHub
-- Browser DevTools
-- Netlify / GitHub Pages
+```
 
 ---
 
 ## 📂 Project Structure
-```
-InfoSphere
+
+```bash
+InfoSphere/
+│
+├── api/
+│   └── news.js
+│
+├── src/
+│   ├── components/
+│   │   └── Navbar.jsx
+│   │
+│   ├── context/
+│   │   └── ThemeContext.jsx
+│   │
+│   ├── pages/
+│   │   ├── News.jsx
+│   │   ├── Weather.jsx
+│   │   └── Countries.jsx
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
 │
 ├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── assets/
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
 ---
-?
+
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/infosphere.git
+```
+
+### Navigate to Project
+
+```bash
+cd infosphere
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## Key Learnings
+
+Through this project, I gained hands-on experience with:
+
+* React Application Development
+* API Integration
+* Fetch API & Async JavaScript
+* Context API
+* State Management
+* Search & Filtering Logic
+* Responsive Web Design
+* Component-Based Architecture
+* Frontend Deployment
+
+---
+
+## Future Enhancements
+
+* Favorite Articles using Local Storage
+* Debounced Search
+* Pagination
+* Advanced Filters
+* Weather Forecast Support
+* Country Comparison Feature
+* API Response Caching
+* Progressive Web App (PWA)
+
+---
